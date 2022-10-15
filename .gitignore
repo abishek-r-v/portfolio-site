@@ -1,1 +1,5 @@
 .env
+
+# To avoid commits made to development settings.py, manage.py
+manage.py
+django_project/settings.py
