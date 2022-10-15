@@ -4,6 +4,7 @@ from django.db import models
 class TechStack(models.Model):
     class Meta:
         db_table = 'tech_stack'  # table_name
+        ordering = ['-category']
 
     CATEGORY = [
         ('PL', 'Programming Language'),
