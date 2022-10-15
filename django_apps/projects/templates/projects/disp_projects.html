@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  <title>My Projects</title>
+{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/projects.css' %}"/>
+{% endblock %}
+
+{% block content %}
+  <section id="projects-gallery">
+    <ul id="projects-container">
+
+      {% for project in projects %}
+        <li class="project-contents">
+          <h2>{{ project.project_name }}</h2>
+
+          <div class="tech-info">
+            <p class="stacks">
+              <span>Tech Stack :</span>
+              {% for stack in project.tech_stacks.all %}
+                <span>{{ stack }}</span>
+              {% endfor %}
+            </p>
+
+            {% if project.frameworks.all %}
+              <p class="frameworks">
+                <span>Frameworks :</span>
+                {% for framework in project.frameworks.all %}
+                  <span>{{ framework }}</span>
+                {% endfor %}
+              </p>
+            {% endif %}
+
+            {% if project.packages.all %}
+              <p class="packages">
+                <span>Packages :</span>
+                {% for pkg in project.packages.all %}
+                  <span>{{ pkg }}</span>
+                {% endfor %}
+              </p>
+            {% endif %}
+          </div>
+
+          <p>{{ project.description }}</p>
+
+          <article class="project-image-list">
+            {% for image in project.image_set.all %}
+                <figure class="project-image-list-item">
+                  <img src="{% static image.file_name %}" class="project-image"/>
+                  <figcaption>{{ image.caption }}</figcaption>
+                </figure>
+            {% endfor %}
+          </article>
+
+        </li>
+      {% endfor %}
+
+    </ul>
+  </section>
+{% endblock %}

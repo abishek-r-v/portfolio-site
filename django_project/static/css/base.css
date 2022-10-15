@@ -1,0 +1,176 @@
+/* Open Sans font with weights of 400, 600, 800 */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap');
+
+/* root settings and declaring the css variables */
+html {
+  /* theme variables */
+  --bg-color: #2a2b2a;
+  --nav-bar-color: #1e1e1e;
+  --border-color: #098b2f;
+  --text-color: #f5f5f5;
+  --primary-color: #098b2f;
+  --secondary-color: #27e25e;
+  --nav-bar-size: 5rem;
+
+  /* other settings */
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+/* To make all the elements follow border-box sizing unless
+explicitly changed in a parent element */
+* {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+/* To allocate space for nav bar at the left */
+#everything-except-nav-bar {
+  margin-left: var(--nav-bar-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Icons size determined by the nav-bar-size */
+.icon:not(#resume-icon, .github) {
+  width: calc(0.4 * var(--nav-bar-size));
+}
+
+#resume-icon {
+  width: calc(0.3 * var(--nav-bar-size));
+}
+
+.github {
+  width: calc(0.38 * var(--nav-bar-size));
+}
+
+/* To fix the nav-bar to left and justify contents to center */
+#nav-bar {
+  left: 0;
+  width: var(--nav-bar-size);
+  height: 100vh;
+  border-right: 2px solid var(--border-color);
+  position: fixed;
+  background-color: var(--nav-bar-color);
+  font-size: 0.97rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* To remove the bullet dots */
+#nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Separation between each list item */
+.nav-list-item {
+  margin: 1.5rem 0;
+}
+
+/* Icon and the text below are grouped into a flex container */
+.nav-list-item-contents,
+.contact-item-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Coloring and hover effect for the anchors */
+.nav-list-item-anchor,
+.contact-item > a {
+  text-decoration: none;
+  color: var(--primary-color);
+  fill: var(--primary-color);
+}
+
+.nav-list-item-anchor:hover,
+.contact-item > a:hover {
+  cursor: pointer;
+  transform: translateY(2px);
+  color: var(--secondary-color);
+  fill: var(--secondary-color);
+}
+
+
+/* Styling the scrollbar */
+body {
+  width: 100%;
+  min-width: 320px;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--nav-bar-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+/* styling footer that contains contact details */
+
+footer {
+  padding-bottom: 0.25rem;
+}
+
+#contacts-container {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Move nav-bar to bottom for mobile screens */
+@media only screen and (max-width: 600px) {
+
+  /* To deallocate space at left and allocate space at bottom for nav-bar */
+  #everything-except-nav-bar {
+    margin-left: 0;
+    margin-bottom: var(--nav-bar-size);
+  }
+
+  /* Move nav-bar to bottom */
+  #nav-bar {
+    bottom: 0;
+    width: 100vw;
+    height: var(--nav-bar-size);
+    border-right: none;
+    border-top: 2px solid var(--border-color)
+  }
+
+  /* Change flex direction as horizontal for the list items */
+  #nav-list {
+    height: 100%;
+    display: flex;
+    flex-direction: rows;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-list-item {
+    margin: 0;
+  }
+
+}
+/* Reference size for various devices
+320px — 480px: Mobile devices.
+481px — 768px: iPads, Tablets.
+769px — 1024px: Small screens, laptops.
+1025px — 1200px: Desktops, large screens.
+1201px and more — Extra large screens, TV.
+*/

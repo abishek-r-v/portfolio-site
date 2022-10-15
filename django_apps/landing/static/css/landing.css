@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* root settings and declaring the css variables */
+html {
+  --name-width: 70vw;
+}
+
+/* Centering the about section which contains - name and description */
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Creating a container to hold the name along with the style */
+#name-container {
+  width: min(var(--about-width), 650px);
+  font-family: 'Pacifico', 'Open Sans', sans-serif;
+  font-size: min(10vw, 100px);
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+/* Modify unordered list into horizontal flexbox with one letter inside a flex */
+#name-as-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Hover effect for the name */
+.name-letter:hover {
+  transform: translateY(2px);
+  color: var(--secondary-color);
+}
+
+/* Fixing width for the description paragraphs */
+#description {
+  width: 90%;
+  max-width: 1400px;
+}
+
+#description p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#about-me {
+  text-align: justify;
+}
+
+/* Reduce font-size for mobile screens */
+@media only screen and (max-width: 600px) {
+  #description p {
+    font-size: 1rem;
+  }
+}
+
+
+

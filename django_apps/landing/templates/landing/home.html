@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  <title>About me</title>
+{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet", href="{% static 'css/landing.css' %}"/>
+{% endblock %}
+
+{% block content %}
+  <section id="about">
+    <div id="name-container">
+      <ul id="name-as-list">
+        <li class="name-letter">A</li>
+        <li class="name-letter">b</li>
+        <li class="name-letter">i</li>
+        <li class="name-letter">s</li>
+        <li class="name-letter">h</li>
+        <li class="name-letter">e</li>
+        <li class="name-letter">k</li>
+        <li class="name-letter">-</li>
+        <li class="name-letter">R</li>
+        <li class="name-letter">-</li>
+        <li class="name-letter">V</li>
+      </ul>
+    </div>
+    <div id="description">
+      <p>Hey! welcome to my portfolio site. I hope you are ready for a story :)</p>
+
+      <article id="about-me">
+        {% for content in about_me %}
+
+        <p>{{ content.description }}</p>
+        {% endfor %}
+
+      </article>
+
+    </div>
+  </section>
+{% endblock %}
