@@ -6,9 +6,9 @@
 SECRET_KEY=actual_key
 
 #For MySQL
-NAME=actual_database_name \
-USER=actual_user_name \
-PASSWORD=actual_password \
+NAME=actual_database_name 
+USER=actual_user_name 
+PASSWORD=actual_password 
 HOST=actual_db_host
 ```
 - To hide the server key and other sensitive information, I have not pushed the .env file to the repo, a similar .env file exists in my project directory.
