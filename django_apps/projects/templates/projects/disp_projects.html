@@ -14,8 +14,8 @@
     <ul id="projects-container">
 
       {% for project in projects %}
-        <li class="project-contents">
-          <h2>{{ project.project_name }}</h2>
+        <li class="project-contents" id="{{ project.pk }}">
+          <h2>{{ project.project_name }}<a href="#{{ project.pk }}" class="headings-hashtag"> #</a></h2>
 
           <div class="tech-info">
             <p class="stacks">

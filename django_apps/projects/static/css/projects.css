@@ -1,6 +1,7 @@
 /* CSS variables for the projects */
 html {
   --gallery-margin: 5%;
+  scroll-behavior: smooth;
 }
 
 /* Allocate size for the gallery and set font sizes */
@@ -44,6 +45,17 @@ html {
    color: var(--primary-color);
 
 }
+
+/* Styling '#' hrefs for headings*/
+.headings-hashtag {
+  text-decoration: none;
+  color: var(--bg-color);
+}
+
+.headings-hashtag:hover {
+  color: var(--secondary-color);
+}
+
 
 /* Styling tech information - tech stacks, frameworks, packages */
 .stacks,
